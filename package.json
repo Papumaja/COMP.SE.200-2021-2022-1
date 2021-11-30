@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "coverage": "jest --collectCoverageFrom=src --coverage"
+    "coverage": "CI=1 jest --coverage"
   },
   "author": "",
   "license": "MIT",
@@ -16,6 +16,16 @@
   "jest": {
     "transform": {
       "\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90,
+        "statements": 90
+      }
     }
   },
   "dependencies": {
