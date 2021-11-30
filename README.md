@@ -18,6 +18,8 @@ Individuals who remove or modify the license file will also carry the consequenc
 2. Install Jest 
     - npm install --save-dev jest
     - https://jestjs.io/docs/getting-started
+3. Install rest of the requirements
+    - 'npm install' in the root folder
 
 ## Run tests
 You can run the Jest-tests with 'npm run test'.

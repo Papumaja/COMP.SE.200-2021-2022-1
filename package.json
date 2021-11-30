@@ -6,11 +6,22 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --collectCoverageFrom=src --coverage"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "jest": "^27.4.2"
+  },
+  "jest": {
+    "transform": {
+      "\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+  },
+  "dependencies": {
+    "jest": "^27.4.2",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.2"
   }
 }
