@@ -23,5 +23,9 @@ Individuals who remove or modify the license file will also carry the consequenc
 You can run the Jest-tests with 'npm run test'.
 Tests are located under tests/
 
+## Get test coverage
+You can get coverage report with 'npm run coverage'.
+Fancy coverage reports are written to coverage/
+
 ## Write tests
 Refer to https://jestjs.io/docs/getting-started for getting started in writing tests

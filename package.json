@@ -5,11 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^27.4.0"
+    "jest": "^27.4.2"
   }
 }
