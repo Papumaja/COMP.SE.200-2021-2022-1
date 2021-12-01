@@ -25,6 +25,17 @@ test('Integer is negative', ()=>{
     expect(toNumber(-6)).toBe(-6);
 });
 
+
+//floats
+
+test('Float is positive', ()=>{
+    expect(toNumber(2.513858342)).toBeCloseTo(2.513858342);
+});
+
+test('Float is negative', ()=>{
+    expect(toNumber(-2.513858342)).toBeCloseTo(-2.513858342);
+});
+
 //max and min values
 
 test('Value is MAX_VALUE', ()=>{
@@ -49,3 +60,11 @@ test('Input is Null', () =>{
 test('Input is list', ()=>{
     expect(toNumber(['a','4'])).toBe(NaN);
 });
+
+test('Input is object', ()=> {
+    expect(toNumber({'a': 6, 'b':7})).toBe(NaN);
+});
+
+test('Input is function', ()=> {
+    expect(toNumber(() => {a=6; return a+4})).toBe(NaN)
+})
