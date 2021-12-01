@@ -81,7 +81,7 @@ test('Test String', () => {
 });
 
 test('Test Iteratee not returning', () => {
-    expect(reduce([1, 2, 3], (a, b)=>{let c = 1}, 0)).toBe(0);
+    expect(reduce([1, 2, 3], (a, b)=>{let c = 1}, 0)).toBe(undefined);
 });
 
 test('Test Iteratee throwing', () => {
