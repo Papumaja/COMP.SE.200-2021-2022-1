@@ -21,6 +21,21 @@ test('Integer is positive', () =>{
     expect(toNumber(5)).toBe(5);
 });
 
+test('Integer is negative', ()=>{
+    expect(toNumber(-6)).toBe(-6);
+});
+
+//max and min values
+
+test('Value is MAX_VALUE', ()=>{
+    expect(toNumber(Number.MAX_VALUE)).toBe(1.7976931348623157e+308);
+});
+
+
+test('Value is MIN_VALUE', ()=>{
+    expect(toNumber(Number.MIN_VALUE)).toBe(5e-324);
+});
+
 //other inputs
 
 test('Input is boolean', () =>{
@@ -29,4 +44,8 @@ test('Input is boolean', () =>{
 
 test('Input is Null', () =>{
     expect(toNumber(null)).toBe(0);
+});
+
+test('Input is list', ()=>{
+    expect(toNumber(['a','4'])).toBe(NaN);
 });
