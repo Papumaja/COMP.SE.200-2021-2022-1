@@ -42,6 +42,7 @@ test('Number is -0', () =>{
 });
 
 
+
 //lists
 
 test('List has one item', () =>{
@@ -55,4 +56,24 @@ test('List has multiple items', () =>{
 
 test('List has no items', () =>{
     expect(toString([])).toBe('');
+});
+
+
+//Other inputs
+
+test('Boolean value true', () =>{
+    expect(toString(true)).toBe('true');
+});
+
+test('Boolean value false', () =>{
+    expect(toString(false)).toBe('false');
+});
+
+test('Value is null', () =>{
+    expect(toString(null)).toBe('');
+});
+
+
+test('Value is object', () =>{
+    expect(toString({'a':2,'b':'test'})).toBe('');
 });
