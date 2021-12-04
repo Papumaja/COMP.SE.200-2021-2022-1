@@ -27,6 +27,9 @@ test('Integer is negative', ()=>{
     expect(toInteger(-6)).toBe(-6);
 });
 
+test('Integer is zero', ()=>{
+    expect(toInteger(0)).toBe(0);
+});
 
 //floats
 
