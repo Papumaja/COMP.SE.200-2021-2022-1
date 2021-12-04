@@ -26,3 +26,18 @@ test('Collection has multiple values', () =>{
 test('Collection has one item', () =>{
     expect(countBy([{'name':'adam', 'alive':true}],value=>value.alive)).toStrictEqual({'true':1});
 });
+
+
+test('Collection has no items', () =>{
+    expect(countBy([{}],value=>value.alive)).toStrictEqual({});
+});
+
+test('Collection is number', () =>{
+    expect(countBy(5,value=>value.alive)).toStrictEqual({});
+});
+
+
+//iteratee
+test('Iteratee returns null', () =>{
+    expect(countBy(persons,value=>null)).toStrictEqual({});
+});
