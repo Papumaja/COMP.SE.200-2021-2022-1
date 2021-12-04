@@ -68,7 +68,16 @@ test('Test Map when reducer returns different data type', () => {
     expect(reduce(map, (a, b)=>{return a+2.1}, 0)).toBeCloseTo(6.3);
 });
 
-// Test erroneus inputs
+// String
+test('Test String has items', () => {
+    expect(reduce("Auto", (a, b)=>{return a+b}, "")).toBe("Auto");
+});
+
+test('Test String is empty', () => {
+    expect(reduce("", (a, b)=>{return a+2}, 0)).toBe(0);
+});
+
+// Test exotic inputs
 
 test('Test Number', () => {
     expect(reduce(3, (a, b)=>{return a+2.1}, 0)).toBe(0);
@@ -76,16 +85,13 @@ test('Test Number', () => {
 test('Test Boolean', () => {
     expect(reduce(true, (a, b)=>{return a+2.1}, 0)).toBe(0);
 });
-test('Test String', () => {
-    expect(reduce("Auto", (a, b)=>{return a+2.1}, 0)).toBe(0);
-});
 
 test('Test Iteratee not returning', () => {
     expect(reduce([1, 2, 3], (a, b)=>{let c = 1}, 0)).toBe(undefined);
 });
 
 test('Test Iteratee throwing', () => {
-    expect(reduce([1, 2, 3], (a, b)=>{throw "a"}, 0)).toThrow("a");
+    expect(reduce([1, 2, 3], (a, b)=>{throw new TypeError()}, 0)).toThrow(TypeError);
 });
 
 test('Test different accumulator type', () => {
