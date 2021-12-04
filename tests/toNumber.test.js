@@ -10,7 +10,7 @@ test('String is negative', () =>{
     expect(toNumber('-1')).toBe(-1);
 });
 
-test('String is double', () =>{
+test('String is float', () =>{
     expect(toNumber('3.295481')).toBeCloseTo(3.295481);
 });
 
