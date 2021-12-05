@@ -21,5 +21,5 @@ test('Predicate returns null', () =>{
 });
 
 test('Predicate throws error', () =>{
-    expect(filter(['hello',2,4.21321,5,7],(value)=>{throw 'error'})).toStrictEqual([[]]);
+    expect(filter(['hello',2,4.21321,5,7],(value)=>{throw new TypeError()})).toThrow(TypeError)
 });
