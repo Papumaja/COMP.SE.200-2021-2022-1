@@ -16,10 +16,26 @@ test('Array has one item', () =>{
 
 
 //predicate testing
-test('Predicate returns null', () =>{
-    expect(filter(['hello',2,4.21321,5,7],()=>null)).toStrictEqual([[]]);
+test('Predicate returns nothing', () =>{
+    expect(filter(['hello',2,4.21321,5,7],()=>{let a = 1})).toStrictEqual([[]]);
 });
 
 test('Predicate throws error', () =>{
     expect(filter(['hello',2,4.21321,5,7],(value)=>{throw new TypeError()})).toThrow(TypeError)
+});
+
+
+//Object
+
+test('Object has one item', () =>{
+    expect(filter({'name':'adam'},(value)=>value==='adam')).toStrictEqual([[]]);
+});
+
+
+test('Object has multiple items', () =>{
+    expect(filter({'name':'adam', 'age':12, 'adam':'name'},(value)=>value==='adam')).toStrictEqual([[]]);
+});
+
+test('Object is empty', () =>{
+    expect(filter({},(value)=>value==='adam')).toStrictEqual([[]]);
 });
