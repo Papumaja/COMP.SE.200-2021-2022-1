@@ -1,20 +1,7 @@
 import countBy from '../src/countBy'
 
-//array
 
-test('Array has one item', () =>{
-    expect(countBy(['test'],(value)=>value==='test')).toStrictEqual({'true':1});
-});
-
-test('Array has multiple items', () =>{
-    expect(countBy(['test','word','hello','test'],value=>value==='test')).toStrictEqual({'true':2,'false':2});
-});
-
-test('Array is empty', () =>{
-    expect(countBy([],(value)=>value==='test')).toStrictEqual({});
-});
-
-//object
+//array+object = collection
 
 const persons = [{'name':'adam', 'alive':true}, {'name':'betty', 'alive':true}, {'name':'charlie', 'alive':false}]
 
@@ -36,8 +23,27 @@ test('Collection is number', () =>{
     expect(countBy(5,value=>value.alive)).toStrictEqual({});
 });
 
+//array
+
+test('Array has one item', () =>{
+    expect(countBy(['test'],(value)=>value==='test')).toStrictEqual({'true':1});
+});
+
+test('Array has multiple items', () =>{
+    expect(countBy(['test','word','hello','test'],value=>value==='test')).toStrictEqual({'true':2,'false':2});
+});
+
+test('Array is empty', () =>{
+    expect(countBy([],(value)=>value==='test')).toStrictEqual({});
+});
+
+
 
 //iteratee
-test('Iteratee returns null', () =>{
-    expect(countBy(persons,value=>null)).toStrictEqual({});
+test('Iteratee does not return anything', () =>{
+    expect(countBy(persons,value=>{let a = 1})).toBe(undefined);
+});
+
+test('Iteratee throws error', () =>{
+    expect(countBy(persons,value=>{throw new TypeError()})).toThrow(TypeError);
 });
